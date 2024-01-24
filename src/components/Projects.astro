@@ -1,0 +1,84 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import React from "./icons/React.astro"
+import Docker from "./icons/Docker.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  React: {
+    name: "React js",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  Docker: {
+    name: "Docker",
+    class: "bg-black text-white",
+    icon: Docker,
+  },
+}
+const PROJECTS = [
+  {
+    title: "Ecotrade",
+    description:
+      "Spearheaded the utilization of technologies like React, Express, Docker, and JavaScript, integrating them seamlessly to create a robust platform for NFT generation and transaction. Played a pivotal role in the implementation of smart contracts, ensuring their seamless integration into the blockchain network, enhancing security and transparency in transactions. Employed MySQL to establish a resilient database infrastructure, optimizing data storage and retrieval processes for the project's functionalities. Collaborated within a dynamic team environment, contributing innovative ideas and technical expertise that significantly elevated the project's performance and impact at Expotec 2022.",
+    // link: "https://svgl.vercel.app/",
+    github: "https://github.com/isabellaaguilar/material-kit-react-main",
+    video: "https://youtu.be/SbukLEvsxGA",
+    tags: [TAGS.JavaScript, TAGS.React, TAGS.Docker],
+  },
+
+]
+---
+
+<section class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ video,  title, description, tags, github }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-red-200/90 dark:text-yellow-200 mb-2">
+          {title}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        {video && (
+  <div class="rounded shadow-2xl shadow-white/10 aspect-video">
+    <a href={video} target="_blank" rel="noopener noreferrer">
+      <img
+        src="../../src/images/ecotrade.png"
+        alt={`Miniatura del video de ${title}`}
+        width="100%"
+        height="400"
+      />
+    </a>
+  </div>
+)}
+        
+        <footer class="flex gap-x-4 items-end justify-start mt-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              View source code
+            </LinkButton>
+          )}
+     
+        </footer>
+      </article>
+    ))
+  }
+</section>

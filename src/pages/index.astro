@@ -7,6 +7,23 @@ import SocialPill from '../components/SocialPill.astro'
 import GitHubIcon from '../components/icons/GitHub.astro'
 import EmailIcon from '../components/icons/Email.astro'
 import Experience from '../components/Experience.astro';
+import SectionContainer from "../components/SectionContainer.astro"
+import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Projects from "../components/Projects.astro"
+import AboutMe from "../components/AboutMe.astro"
+import ProfileCheck from "../components/icons/ProfileCheck.astro"
+import JavaScript from "../components/icons/JavaScript.astro"
+import React from "../components/icons/React.astro"
+import Docker from "../components/icons/Docker.astro"
+import Python from "../components/icons/Python.astro"
+import Html from "../components/icons/Html.astro"
+import Css from "../components/icons/Css.astro"
+import Tailwind from "../components/icons/Tailwind.astro"
+import PostgreSQL from "../components/icons/PostgreSQL.astro"
+import MySQL from "../components/icons/MySQL.astro"
+import Node from "../components/icons/Node.astro"
+import Django from "../components/icons/Django.astro"
 
 ---
 
@@ -14,30 +31,122 @@ import Experience from '../components/Experience.astro';
 <Layout title="Portafolio de Isabella Aguilar - Software Development"
 		description='software development'
 >
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+	<main class="px-4">
+		
+		<SectionContainer id="contact" class="py-44 pb-32">
 		<img class="rounded-full w-12 h-12 mb-4" src="https://avatars.githubusercontent.com/u/84691217?v=4" alt="Isabella photo">
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">Hello, I'm Isabella Aguilar <a href="https://www.linkedin.com/in/isabella-aguilar-357617214/" target="_black" rel="noopener" class="flex justify-center items-center"><Badge>Available to work</Badge></a> </h1>
-		<h2 class="text-2xl text-wrap"><span> 2 years of experience.</span> <span class="text-yellow-200/90">Software Development.</span> 
-		<span class="text-red-200/90"> San José, Costa Rica.</span>	
+		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hello, I'm Isabella Aguilar <a href="https://www.linkedin.com/in/isabella-aguilar-357617214/" target="_black" rel="noopener" class="flex justify-center items-center"><Badge>Available to work</Badge></a> </h1>
+		<h2 class="text-white text-xl lg:text-2xl text-wrap max-w-[700px]">2 years of experience. <span class="text-yellow-200/90">Software Development.</span> 
+		<span class="text-red-200/90 gap-x-4 pb-6 lg:pb-10"> San José, Costa Rica.</span>	
 		</h2>
-		<nav class="flex gap-x-4 mt-8">
-				<SocialPill href="https://www.linkedin.com/in/isabella-aguilar-357617214/">
-					<LinkedInIcon class="size-6"/>
-    				LinkedIn
+		
+		<nav class="flex gap-x-4 mt-8 flex-wrap" >
+				<SocialPill  href="https://www.linkedin.com/in/isabella-aguilar-357617214/">
+					<LinkedInIcon class="size-4 md:size-6"/>
+    			<span class="text-white">LinkedIn</span>	
 				</SocialPill>
-				<SocialPill href="https://github.com/isabellaaguilar">
-					<GitHubIcon class="size-6"/>
-    				GitHub
+				<SocialPill  href="https://github.com/isabellaaguilar">
+					<GitHubIcon class="size-4 md:size-6"/>
+    				<span class="text-white">GitHub</span>
 				</SocialPill>
-				<SocialPill >
-					<EmailIcon class="size-6"/>
-    				ia514648@gmail.com
+				<SocialPill href="mailto:ia514648@gmail.com" >
+					<EmailIcon class="size-4 md:size-6"/>
+    				<span class="text-white">ia514648@gmail.com</span>
 				</SocialPill>
 		</nav>
-	</section>
-	<section>
+		<div>
+			<nav class="flex gap-x-4 mt-8 flex-wrap">
+			  <h1 class="text-xl lg:text-2xl">Skills</h1>
+			</nav>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+			  <!-- Frontend -->
+			  <div>
+				<h2 class="text-lg font-semibold mb-4">Frontend</h2>
+				<nav class="flex flex-wrap gap-x-4">
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<JavaScript class="size-4 md:size-6" />
+				  </div>
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<React class="size-4 md:size-6" />
+				  </div>
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<Html class="size-4 md:size-6" />
+				  </div>
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<Css class="size-4 md:size-6" />
+				  </div>
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<Tailwind class="size-4 md:size-6" />
+				  </div>
+				  <!-- Agrega más tecnologías de frontend según sea necesario -->
+				</nav>
+			  </div>
+			  <!-- Backend -->
+			  <div>
+				<h2 class="text-lg font-semibold mb-4">Backend</h2>
+				<nav class="flex flex-wrap gap-x-4">
+					<div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+						<Python class="size-4 md:size-6" />
+					  </div>
+					  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+						<Django class="size-4 md:size-6" />
+					  </div>
+					  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+						<Node class="size-4 md:size-6" />
+					  </div>
+					  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+						<PostgreSQL class="size-4 md:size-6" />
+					  </div>
+					  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+						<MySQL class="size-4 md:size-6" />
+					  </div>
+				  <!-- Agrega tecnologías de backend según sea necesario -->
+				  
+				</nav>
+			  </div>
+			  <!-- Other Skills and Environments -->
+			  <div>
+				<h2 class="text-lg font-semibold mb-4">Other Skills</h2>
+				<nav class="flex flex-wrap gap-x-4">
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<GitHubIcon class="size-4 md:size-6" />
+				  </div>
+				  <div class="bg-gray-200 rounded-md p-2 flex items-center gap-2 mt-4">
+					<Docker class="size-4 md:size-6" />
+				  </div>
+				  <!-- Agrega más habilidades y entornos según sea necesario -->
+				</nav>
+			  </div>
+			</div>
+		  </div>
+		  
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-8"/>
+				work experience
+			
+			</h2>
 		<Experience/>
-	</section>
+	   </SectionContainer>
+	   <SectionContainer id="projects">
+		<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+			<CodeIcon class="size-8"/>
+			Projects
+		
+		</h2>
+	<Projects/>
+   </SectionContainer>
+   <SectionContainer id="about">
+	<h2
+	  class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+	>
+	  <ProfileCheck class="size-7" />
+	  About Me
+	</h2>
+	<AboutMe />
+  </SectionContainer>
+  
 	</main>
 </Layout>
